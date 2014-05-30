@@ -1,0 +1,15 @@
+language: ruby
+before_install:
+  - sudo apt-get update -qq
+  - wget "https://launchpad.net/ubuntu/+archive/primary/+files/libmecab-dev_0.996-1.1_amd64.deb"
+  - wget "https://launchpad.net/ubuntu/+archive/primary/+files/libmecab2_0.996-1.1_amd64.deb"
+  - wget "https://launchpad.net/ubuntu/+archive/primary/+files/mecab-utils_0.996-1.1_amd64.deb"
+  - wget "https://launchpad.net/ubuntu/+archive/primary/+files/mecab_0.996-1.1_amd64.deb"
+  - sudo dpkg -i libmecab*.deb mecab-utils_0.996-1.1_amd64.deb
+  - sudo apt-get install -y mecab-ipadic mecab-ipadic-utf8
+  - sudo dpkg -i mecab_0.996-1.1_amd64.deb
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+  - 2.1.2
